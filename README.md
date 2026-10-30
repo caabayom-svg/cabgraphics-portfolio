@@ -6,6 +6,7 @@ A static website: no build step, no dependencies to install.
 - `index.html`  the whole site (HTML, CSS, JavaScript)
 - `assets/`     all images (hero photo, logo, brand logos, portfolio flyers)
 - `vercel.json` hosting settings (clean URLs and image caching)
+- `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`  browser-tab and home-screen icons (CAB logo)
 
 ## Deploy on Vercel
 **Option A: drag and drop (fastest)**

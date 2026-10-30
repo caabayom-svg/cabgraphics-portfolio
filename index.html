@@ -2,7 +2,9 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="CABGRAPHICS is the portfolio of Atingua Abayom, a graphic designer in Accra creating flyers, logos and brand identities.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>CABGRAPHICS | Atingua Abayom, Graphic Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Syne:wght@700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -98,9 +100,6 @@ summary::after{content:"+";color:var(--em);font-size:1.4rem;transition:transform
 <h2 class="d text-4xl sm:text-6xl max-w-3xl mx-auto">Let’s build something epic together.</h2>
 <a href="#contact" class="btn mt-8 !bg-[#F6F4ED] !text-[#064E3B]">Start a project</a></div></section>
 
-<section id="pricing" class="py-20"><div class="max-w-7xl mx-auto px-5"><h2 class="d text-4xl sm:text-5xl rv">Pricing plans</h2>
-<p class="mt-3" style="color:var(--mut)">Sample prices. Final quotes depend on scope.</p>
-<div class="grid lg:grid-cols-3 gap-5 mt-10 items-stretch" id="pc"></div></div></section>
 
 <section id="faq" class="py-20"><div class="max-w-3xl mx-auto px-5"><h2 class="d text-4xl sm:text-5xl mb-8 rv">Questions clients ask</h2><div id="fq"></div></div></section>
 </main>
@@ -117,7 +116,7 @@ summary::after{content:"+";color:var(--em);font-size:1.4rem;transition:transform
 
 <script>
 const IMG={"ice2":"assets/icehair-banner.webp","ice3":"assets/icehair-braids.webp","ice4":"assets/icehair-mockup.webp","ice5":"assets/icehair-eid.webp","sand2":"assets/enneys-flyer-2.webp","sand3":"assets/enneys-flyer-3.webp","sand":"assets/enneys-flyer-1.webp", "ice":"assets/icehair-flyer-1.webp", "iron":"assets/ironpeak-flyer.webp", "kj":"assets/kingj-flyer.webp", "ken4":"assets/kenkey-flavors.webp", "ken5":"assets/kenkey-smoothies.webp", "neck":"assets/jewelry-necklace.webp", "earr":"assets/jewelry-earrings.webp", "thanks":"assets/thank-you-flyer.webp", "heritage":"assets/heritage-fair-flyer.webp"};
-const $=s=>document.querySelector(s),L=["Home","About","Services","Portfolio","Pricing","FAQ"],ids=["home","about","services","portfolio","pricing","faq"];
+const $=s=>document.querySelector(s),L=["Home","About","Services","Portfolio","FAQ"],ids=["home","about","services","portfolio","faq"];
 const nav=(c)=>L.map((l,i)=>`<a class="${c}" href="#${ids[i]}">${l}</a>`).join("");
 $("#nv").innerHTML=nav("lnk");$("#mn").innerHTML=nav("lnk");$("#fn").innerHTML=nav("");
 $("#mb").onclick=e=>{const m=$("#mn");m.classList.toggle("hidden");m.classList.toggle("flex");e.currentTarget.setAttribute("aria-expanded",!m.classList.contains("hidden"))};
@@ -146,9 +145,9 @@ $("#wk").onclick=e=>{const b=e.target.closest("[data-n]");if(b){cw=+b.dataset.n;
 const step=d=>{const n=W[cw].i.length;ci=(ci+d+n)%n;show()};
 $("#lp").onclick=()=>step(-1);$("#ln").onclick=()=>step(1);$("#lx").onclick=()=>lb.classList.remove("on");lb.onclick=e=>{if(e.target==lb)lb.classList.remove("on")};
 addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key=="Escape")lb.classList.remove("on");if(e.key=="ArrowLeft")step(-1);if(e.key=="ArrowRight")step(1)});
-const P=[["Starter","GH₵150+","One flyer or social graphic",["1 design","2 revisions","Social and print files"]],["Professional","GH₵1000+","Logo and brand starter kit",["Logo with 2 versions","Color and type guide","3 social templates","5 revisions"]],["Enterprise","Custom","Events and full brand systems",["Full identity package","Mockups and print layouts","Priority delivery","Ongoing support"]]];
-$("#pc").innerHTML=P.map(([n,p,d,f,h])=>`<div class="card p-8 relative ${h?"!border-[var(--em)] lg:-translate-y-3 shadow-2xl":""}">${h?'<span class="absolute -top-3 left-8 btn b1 !py-1 !px-3 text-xs">Most popular</span>':""}<h3 class="d text-2xl">${n}</h3><p class="d text-4xl mt-3" style="color:var(--em)">${p}</p><p class="mt-2" style="color:var(--mut)">${d}</p><ul class="mt-6 space-y-3">${f.map(x=>`<li class="flex gap-3"><b style="color:var(--em)">✓</b>${x}</li>`).join("")}</ul><a href="#contact" class="btn ${h?"b1":"b2"} mt-8 w-full justify-center">Choose ${n}</a></div>`).join("");
 $("#fq").innerHTML=[["How long does a project take?","A flyer usually takes 1 to 3 days. Logos and brand kits take 1 to 2 weeks, depending on feedback."],["How many revisions are included?","Each plan includes revision rounds so the final result matches your vision."],["What files will I receive?","Print-ready PDF, high-resolution PNG and JPG, and editable or vector files for logos."],["Do you work with clients outside Ghana?","Yes. I work remotely and share progress by WhatsApp or email."],["How do I start?","Use the Contact Me button and share a short brief, your deadline and any references."]].map(([q,a])=>`<details><summary>${q}</summary><p class="pb-5" style="color:var(--mut)">${a}</p></details>`).join("");
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
-</script></body></html>
+</script><script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</body></html>
